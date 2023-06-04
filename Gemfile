@@ -33,8 +33,12 @@ gem "redis", "~> 4.0"
 # Devise for auth system
 gem 'devise'
 
-#rubocop
+# rubocop
 gem 'rubocop-rails', require: false
+
+# haml gem
+gem "haml-rails", "~> 2.0"
+gem 'html2haml'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

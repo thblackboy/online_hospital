@@ -1,0 +1,6 @@
+%h1 Doctors#index
+%p Find me in app/views/doctors/index.html.erb
+= form_with url: doctors_path, method: :get do |form|
+  = form.label :speciality, "Search for:"
+  = form.text_field :speciality
+  = form.submit "Search"
