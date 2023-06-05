@@ -1,0 +1,6 @@
+- if resource.errors.any?
+  #error_explanation{"data-turbo-cache" => "false"}
+    %b Обнаружены следующие ошибки:
+    %ul 
+      -resource.errors.messages.values.flatten.each do |message|
+        %li= message

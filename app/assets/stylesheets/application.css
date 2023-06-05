@@ -217,3 +217,23 @@ input[name="commit"]:hover {
   text-decoration: underline;
   font-size: 17px;
 }
+
+.sign-in-form input, .sign-up-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.sign-in-form .actions input {
+  margin-bottom: 5px;
+}
+
+.sign-in-form, .sign-up-form  {
+  justify-content: center;
+  display: flex;
+}

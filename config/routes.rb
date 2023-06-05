@@ -9,7 +9,10 @@ Rails.application.routes.draw do
     end
   end
   devise_for :doctors, path_prefix: 'auth'
-  devise_for :clients, path_prefix: 'auth'
+  devise_for :clients, path_prefix: 'auth', controllers: {
+    sessions: 'clients/sessions',
+    registrations: 'clients/registrations'
+  }
 
   root to: 'doctors#index'
 end

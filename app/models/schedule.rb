@@ -23,6 +23,6 @@ class Schedule < ApplicationRecord
       work_datetimes += parsed_times.presence || []
     end
 
-    work_datetimes - existed_dates
+    (work_datetimes - existed_dates).map { |date| date.localtime.strftime('%D %T') }
   end
 end
