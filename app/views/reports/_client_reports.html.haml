@@ -1,0 +1,17 @@
+-if resource.any?
+  %table
+    %thead
+      %tr
+        %th ФИО Врача
+        %th Оценка приема
+        %th Отзыв
+        %th Дата публикации
+    %tbody
+      - resource.each do |report|
+        %tr
+          %td= link_to "#{report.doctor.fio}", doctor_path(report.doctor)
+          %td= report.note
+          %td= report.comment
+          %td= report.created_at.localtime.strftime("%D")
+-else
+  %p Вы еще не оставляли отзывы

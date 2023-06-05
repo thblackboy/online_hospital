@@ -1,0 +1,27 @@
+-if resource.any?
+  %table
+    %thead
+      %tr
+      %th Номер записи
+      %th ФИО Врача
+      %th Специальность
+      %th Время приема
+      %th Действия
+    %tbody
+      - resource.each do |event|
+        %tr
+          %td= event.id
+          %td= event.doctor.fio
+          %td= event.doctor.speciality
+          %td= event.start_time.localtime.strftime("%D %T")
+          %td
+            -if !event.is_done? && !event.is_canceled?
+              = button_to 'Отменить запись', cancel_event_path(event), method: :put, local: true
+            -elsif !event.is_canceled? && event.is_done? && event.can_do_report?
+              = link_to 'Оставить отзыв', new_report_path({event_id: event.id}), method: :put, local: true
+            -elsif event.is_canceled?
+              %p Запись отменена
+            -else
+              %p Запись выполнена
+-else
+  %p Нет записей

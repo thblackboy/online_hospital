@@ -1,0 +1,15 @@
+= render 'shared/errors', resource: @event
+%h2 Записаться к врачу:
+.event-form 
+  = form_with model: @event, method: :post, local: true do |form|
+    = form.hidden_field :doctor_id, value: @event.doctor_id
+    .field
+      = form.label :doctor_fio, "ФИО врача:"
+      = form.text_field :doctor_fio, value: @doctor.fio, disabled: true
+    .field
+      = form.label :doctor_spec, "Cпециальность:"
+      = form.text_field :doctor_spec, value: @doctor.speciality, disabled: true
+    .field
+      = form.label :start_time, "Дата и время записи:"
+      = form.select :start_time, @doctor.schedule&.available_dates || []
+    = form.submit "Оформить запись"

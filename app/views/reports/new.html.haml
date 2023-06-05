@@ -1,0 +1,21 @@
+%h2 Отзыв о приеме:
+= render 'shared/errors', resource: @report
+.report-form 
+  = form_with model: @report, method: :post, local: true do |form|
+    = form.hidden_field :event_id, value: @event.id
+    .field
+      = form.label :event_num, "Номер записи:"
+      = form.text_field :event_num, value: @event.id, disabled: true
+    .field
+      = form.label :doctor_fio, "ФИО врача:"
+      = form.text_field :doctor_fio, value: @event.doctor.fio, disabled: true
+    .field
+      = form.label :start_time, "Время приема:"
+      = form.text_field :start_time, value: @event.start_time.localtime.strftime("%D %T"), disabled: true
+    .field
+      = form.label :note, "Оценка приема:"
+      = form.select :note, (1..5), include_blank: true
+    .field
+      = form.label :comment, "Отзыв:"
+      = form.text_area :comment, size: "70x5"
+    = form.submit "Оформить запись"

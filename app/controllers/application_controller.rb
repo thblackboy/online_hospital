@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  # authenticate_client!
+  # authenticate_doctor!
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   private

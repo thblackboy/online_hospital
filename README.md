@@ -24,16 +24,56 @@ Things you may want to cover:
 * ...
 
 
-# devise
-
-  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
-     For example:
-
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
-     * Not required for API-only Applications *
-
-  4. You can copy Devise views (for customization) to your app by running:
-
-       rails g devise:views
+# help for schedule
+{
+    1 => [
+        '11:30',
+        '12:00',
+        '12:30',
+        '13:00',
+        '14:00',
+        '14:30',
+        '15:00',
+        '15:30',
+    ],
+    2 => [
+        '11:30',
+        '12:00',
+        '12:30',
+        '13:00',
+        '14:00',
+        '14:30',
+        '15:00',
+        '15:30',
+    ],
+    3 => [
+        '11:30',
+        '12:00',
+        '12:30',
+        '13:00',
+        '14:00',
+        '14:30',
+        '15:00',
+        '15:30',
+    ],
+    4 => [
+        '11:30',
+        '12:00',
+        '12:30',
+        '13:00',
+        '14:00',
+        '14:30',
+        '15:00',
+        '15:30',
+    ],
+    5 => [
+        '11:30',
+        '12:00',
+        '12:30',
+        '13:00',
+        '14:00',
+        '14:30',
+        '15:00',
+        '15:30',
+    ]
+}

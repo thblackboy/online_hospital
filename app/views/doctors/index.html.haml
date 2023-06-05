@@ -1,6 +1,22 @@
-%h1 Doctors#index
-%p Find me in app/views/doctors/index.html.erb
-= form_with url: doctors_path, method: :get do |form|
-  = form.label :speciality, "Search for:"
-  = form.text_field :speciality
-  = form.submit "Search"
+.search-container 
+  = form_with url: doctors_path, method: :get do |form|
+    = form.label :speciality, "Поиск врачей по специальности:"
+    = form.select :speciality, Doctor::SPECIALITIES + ['']
+    = form.submit "Найти"
+
+%table
+  %thead
+    %tr
+      %th Фото
+      %th ФИО
+      %th Специальность
+      %th Рейтинг
+      %th Действия
+  %tbody
+    - @doctors.each do |doctor|
+      %tr
+        %td= '-'
+        %td= doctor.fio
+        %td= doctor.speciality
+        %td= doctor.rating
+        %td= link_to 'Подробнее', doctor_path(doctor)

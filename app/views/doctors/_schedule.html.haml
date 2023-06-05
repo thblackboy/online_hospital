@@ -1,0 +1,9 @@
+-if resource.present?
+  %table
+    - resource.schedule.each do |key, value|
+      %tr
+        %th= Schedule::DAYS[key.to_i]
+        - value.each do |time|
+          %td= time
+-else
+  %p Врач в отпуске

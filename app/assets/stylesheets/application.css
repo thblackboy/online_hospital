@@ -13,3 +13,207 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin: 0 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  min-width: 400px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav button {
+  float: left;
+  color: #f2f2f2;
+  background-color: #333;
+  border: 0;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+.topnav button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+tbody tr a{
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+tbody tr a:hover {
+  background-color: #444;
+}
+
+.search-container {
+  background-color: #ddd;
+  padding: 16px;
+  text-align: center;
+}
+
+.search-container select{
+  padding: 7px 14px;
+  width: 250px;
+  font-size: 17px;
+}
+
+.search-container label{
+  color: black;
+  font-size: 17px;
+}
+
+.search-container input[name="commit"] {
+  margin-left: 16px;
+}
+
+input[name="commit"] {
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  background-color: #04AA6D;
+  color: white;
+  padding: 7px 14px;
+}
+
+.container button {
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  background-color: #04AA6D;
+  color: white;
+  padding: 7px 14px;
+}
+
+.container button:hover {
+  background: #444;
+}
+
+input[name="commit"]:hover {
+  background: #444;
+}
+
+.event-form input[name="commit"] {
+  margin-top: 15px;
+}
+
+.make-event, .done-event {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.make-event a {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.make-event a:hover {
+  background-color: #444;
+}
+
+.report-form input[type=text], .report-form select, .report-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.report-form {
+  border-radius: 5px;
+  background-color: #f2f2f28a;
+  padding: 20px;
+  max-width: 500px;
+  min-width: 400px;
+}
+
+.event-form input[type=text], .event-form select, .event-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.event-form {
+  border-radius: 5px;
+  background-color: #f2f2f28a;
+  padding: 20px;
+  max-width: 500px;
+  min-width: 400px;
+}
+
+.reports td:first-child {
+  width: 10%;
+}
+.reports td:nth-child(2) {
+  width: 60%;
+}
+.reports td:last-child {
+  width: 30%;
+}
+
+.my-reports a {
+  background-color: transparent;
+  color: #04AA6D;
+  text-decoration: underline;
+  font-size: 17px;
+}

@@ -1,0 +1,13 @@
+%div.topnav
+  = link_to "Главная страница", root_path, rel: 'nofollow', class: 'active'
+  = link_to "Электронная очередь", queues_path, rel: 'nofollow'
+  = link_to "Мои записи", events_path, rel: 'nofollow' if current_client || current_doctor
+  = link_to "Мои отзывы", reports_path, rel: 'nofollow' if current_client || current_doctor
+  %div.topnav-right
+    -if current_doctor
+      = button_to  "Выйти", destroy_doctor_session_path, rel: 'nofollow', method: :delete
+    -elsif current_client
+      = button_to "Выйти", destroy_client_session_path, rel: 'nofollow', method: :delete
+    -else
+      = link_to "Войти как пациент", new_client_session_path, rel: 'nofollow'
+      = link_to "Войти как врач", new_doctor_session_path, rel: 'nofollow'

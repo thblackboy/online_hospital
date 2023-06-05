@@ -1,0 +1,16 @@
+%h2 Информация о пациенте:
+.photo
+  %p FUTURE
+.events-info
+  %table
+    %tr
+      %th ФИО
+      %td= @event.client.fio
+    %tr
+      %th Дата рождения
+      %td= @event.client.birthday.strftime("%D")
+    %tr
+      %th Время приема
+      %td= @event.start_time.localtime.strftime("%D %T")
+.done-event 
+  = button_to 'Завершить прием', done_event_path(@event), method: :put

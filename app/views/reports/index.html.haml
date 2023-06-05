@@ -1,0 +1,7 @@
+.my-reports
+  -if current_client
+    %h2= "Мои отзывы"
+    =render 'client_reports', resource: @reports
+  -else
+    %h2= "Ваш рейтинг: #{current_doctor.rating}/5"
+    =render 'doctor_reports', resource: @reports

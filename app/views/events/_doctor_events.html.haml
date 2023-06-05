@@ -1,0 +1,20 @@
+%h2= Date.today
+-if resource.any?
+  %table
+    %thead
+      %tr
+        %th Номер записи
+        %th ФИО Пациента
+        %th Дата рождения
+        %th Время приема
+        %th Действия
+    %tbody
+      - resource.each do |event|
+        %tr
+          %td= event.id
+          %td= event.client.fio
+          %td= event.client.birthday.strftime("%D")
+          %td= event.start_time.localtime.strftime("%D %T")
+          %td= link_to 'Подробнее', event_path(event)
+-else
+  %p На сегодня нет записей

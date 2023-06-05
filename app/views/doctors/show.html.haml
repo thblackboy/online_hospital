@@ -1,2 +1,39 @@
-%h1 Doctors#show
-%p Find me in app/views/doctors/show.html.erb
+%h2 Информация о враче:
+.photo
+  %p FUTURE
+.doctors-info
+  %table
+    %tr
+      %th ФИО
+      %td= @doctor.fio
+    %tr
+      %th Специальность
+      %td= @doctor.speciality
+    %tr
+      %th Рейтинг
+      %td= @doctor.rating
+    %tr
+      %th График работы
+      %td
+        .schedule
+          = render 'doctors/schedule', resource: @doctor.schedule
+.make-event 
+  = link_to 'Записаться на прием', new_event_path(doctor_id: @doctor.id)
+
+%h2 Отзывы о приеме:
+.reports
+  -if @doctor.reports.any?
+    %table
+      %thead
+        %tr
+          %th Оценка приема
+          %th Отзыв
+          %th Дата публикации
+      %tbody
+        - @doctor.reports.each do |report|
+          %tr
+            %td= report.note
+            %td= report.comment
+            %td= report.created_at.localtime.strftime("%D")
+  -else
+    %p Нет отзывов

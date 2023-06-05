@@ -1,0 +1,22 @@
+%h2 Электронная очередь
+.search-container 
+  = form_with url: queues_path, method: :get do |form|
+    = form.label :doctor_id, "Выберите врача:"
+    = form.select :doctor_id, Doctor.all.map{ |doctor| ["#{doctor.speciality} #{doctor.fio}", doctor.id] }, include_blank: true
+    = form.submit "Найти"
+-if @queue.any?
+  %table
+    %thead
+      %tr
+        %th 
+        %th Номер записи
+        %th Время приема
+    %tbody
+      - @queue.each_with_index do |event, index|
+        %tr
+          %td
+            %strong= "#{"Первый в очереди" if index == 0}"
+          %td= event.id
+          %td= event.start_time.localtime.strftime("%D %T")
+-else
+  %p Пустая очередь
