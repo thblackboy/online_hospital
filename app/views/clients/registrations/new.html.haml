@@ -12,7 +12,7 @@
           (Минимальное кол-во символов #{@minimum_password_length})
       = f.password_field :password, autocomplete: "new-password"
     .field
-      = f.label :password_confirmation
+      = f.label :password_confirmation, "Повторить пароль"
       = f.password_field :password_confirmation, autocomplete: "new-password"
     .field
       = f.label :fio, 'ФИО'

@@ -4,7 +4,10 @@ class Event < ApplicationRecord
   has_one :report
   validates :start_time, presence: true,
                          uniqueness: { scope: %i[doctor_id], message: 'К сожалению выбранное вами время уже занято' }
-
+  validate do
+    errors.add(:start_time, 'К сожалению выбранное вами время уже занято') if Event.active
+                                                                                   .where(doctor_id:, start_time:).any? && new_record?
+  end
   validates :doctor_id, presence: true
   validates :client_id, presence: true
 

@@ -5,8 +5,10 @@
   = link_to "Мои отзывы", reports_path, rel: 'nofollow' if current_client || current_doctor
   %div.topnav-right
     -if current_doctor
+      %p= "Добро пожаловать#{current_doctor.fio}"
       = button_to  "Выйти", destroy_doctor_session_path, rel: 'nofollow', method: :delete
     -elsif current_client
+      %p= "Добро пожаловать #{current_client.fio}"
       = button_to "Выйти", destroy_client_session_path, rel: 'nofollow', method: :delete
     -else
       = link_to "Войти как пациент", new_client_session_path, rel: 'nofollow'

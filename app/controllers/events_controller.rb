@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   end
 
   def cancel
-    @event.update({ is_canceled: true })
+    @event.update!({ is_canceled: true })
 
     redirect_to events_path, notice: 'Запись отменена'
   end
